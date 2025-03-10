@@ -18,13 +18,6 @@ if response.status_code == 200:
 else:
     print(f"Erro ao baixar o arquivo. Código de status: {response.status_code}")    
 
-# try:
-#     tabela = pd.read_excel(caminho_excel, sheet_name='Contratações', header=1)
-# except Exception as e:
-#     st.error(f'Erro ao carregar o arquivo: {e}')
-
-
-
 tabela["Data de Conclusão Planejada*"] = pd.to_datetime(tabela['Data de Conclusão Planejada*'], format='%d/%m/%Y', errors='coerce')
 tabela["Qtde de Entregas para a Conclusão"] = tabela["Qtde de Entregas para a Conclusão"].astype(str)
 tabela["Dias Úteis para a Data de Conclusão Planejada"] = tabela["Dias Úteis para a Data de Conclusão Planejada"].astype(str)
