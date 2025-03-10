@@ -61,7 +61,7 @@ def gerar_insights_derivados(tabela):
 
     tabela.loc[:,'Mês'] = date[DATA_CONCLUSAO_ESTIMADA].dt.month.map(meses_abreviados)
 
-    tabela['Numero_Mes'] = tabela[DATA_CONCLUSAO_ESTIMADA].dt.month
+    tabela.loc[:,'Numero_Mes'] = tabela[DATA_CONCLUSAO_ESTIMADA].dt.month
 
     objetosPorMês = tabela.groupby(["Mês", "Numero_Mes"])[[CUMPRIMENTO_PRAZO_ENTREGA_ATUAL]].count()
     objetosPorMês = objetosPorMês.reset_index()
