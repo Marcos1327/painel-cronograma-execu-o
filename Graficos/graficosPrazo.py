@@ -91,12 +91,13 @@ def grafico_entregas_em_dia(entregasEmDia):
         y = CUMPRIMENTO_PRAZO_ENTREGA_ATUAL,
         text = CUMPRIMENTO_PRAZO_ENTREGA_ATUAL,
         color = ARTEFATO_ENTREGA_ATUAL,
-        color_discrete_sequence = px.colors.qualitative.Set2
+        color_discrete_sequence = px.colors.qualitative.Set2,
     )
 
     grafico.update_layout(
         title=dict(text='Entregas em Dia', x=0.02, font=dict(size=22)),
         showlegend = False,
+        paper_bgcolor="LightSteelBlue",
     )
 
     grafico.update_traces(
@@ -109,7 +110,7 @@ def grafico_entregas_em_dia(entregasEmDia):
         showticklabels=True,
         visible=True,
         title= "",
-        tickfont=dict(size=14, color= COR_TEXTO_GRAFICO)
+        tickfont=dict(size=14, color= COR_TEXTO_GRAFICO),
     )
 
     grafico.update_yaxes(

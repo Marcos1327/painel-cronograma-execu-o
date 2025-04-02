@@ -28,11 +28,37 @@ def quebrar_texto(texto, max_caracteres=20): #31
         if texto[i] == " ":
             texto_quebrado = texto[:i] + "<br>" + texto[i+1:]
             return texto_quebrado
-    
-    
+        
     return texto
 
-# quebrar_texto(None)    
+def quebrar_texto2(texto, max_caracteres=20): #31
+
+    if len(texto) <= max_caracteres:
+        return texto
+    
+    meio_texto = len(texto) // 2
+
+    for i in range(meio_texto, 0, -1):
+        if texto[i] == " ":
+            texto_quebrado = texto[:i] + "<br>" + texto[i+1:]
+            break
+
+    else:
+        return texto
+    
+    print(len(texto_quebrado))
+
+    if len(texto_quebrado) > 12:
+        meio_segunda_parte = len(texto_quebrado) // 2
+        for j in range(meio_segunda_parte, 0, -1):
+            if texto_quebrado[j] == " ":
+                texto_quebrado = texto_quebrado[:j] + "<br>" + texto_quebrado[j+1:]
+                break
+    print(texto_quebrado)
+        
+    return texto_quebrado
+
+quebrar_texto2("Despacho pela Inicialização da Contratação")    
 
 
 
